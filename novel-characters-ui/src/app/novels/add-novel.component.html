@@ -1,0 +1,13 @@
+<div class="add-novel-component">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input [(ngModel)]="name" matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Genre</mat-label>
+        <input [(ngModel)]="genre" matInput>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" (click)="addEdit()" [disabled]="!name || !genre">Save</button>
+</div>

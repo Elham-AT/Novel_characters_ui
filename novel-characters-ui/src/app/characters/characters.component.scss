@@ -1,0 +1,12 @@
+.chracter-component {
+    padding: 24px;
+    table {
+        margin-top: 20px;
+        width: 100%;
+        min-width: unset;
+        max-width: 1000px;
+        .delete-column {
+            text-align: center;
+        }
+    }
+}

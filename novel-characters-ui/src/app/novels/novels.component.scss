@@ -1,0 +1,15 @@
+.novel-component {
+    padding: 24px;
+    button {
+        float: right;
+    }
+    table {
+        margin-top: 20px;
+        width: 100%;
+        min-width: unset;
+        max-width: 1000px;        
+        .action-column {
+            text-align: center;
+        }
+    }
+}
