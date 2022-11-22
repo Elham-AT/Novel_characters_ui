@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Character } from './characters/characters.model';
+import { AddCharacterReq, Character, EditCharacterReq } from './characters/characters.model';
 import { AddNovelReq, EditNovelReq, Novel } from './novels/novel.model';
 
 @Injectable({
@@ -25,7 +25,16 @@ export class DataService {
   getCharacters(): Observable<Character []> {
     return this.http.get<Character []>(`${this.apiUrl}/fictional_character`);
   }  
+  getCharactersByNovelId(novelId: number): Observable<Character []> {
+    return this.http.get<Character []>(`${this.apiUrl}/fictional_character/novel/${novelId}`);
+  } 
   deleteCharacter(characterId: number) {
     return this.http.delete(`${this.apiUrl}/fictional_character/${characterId}`);
+  }  
+  addCharacter(novel: AddCharacterReq) {
+    return this.http.post<Novel>(`${this.apiUrl}/fictional_character`, novel);
+  }
+  editCharacter(novel: EditCharacterReq) {
+    return this.http.put<Novel>(`${this.apiUrl}/fictional_character`, novel);
   }
 }

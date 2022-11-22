@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { AddNovelComponent } from './novels/add-novel.component';
 import {MatIconModule} from '@angular/material/icon';
+import { AddCharacterComponent } from './characters/add-character/add-character.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -28,7 +30,8 @@ import {MatIconModule} from '@angular/material/icon';
     AppComponent,
     NovelsComponent,
     CharactersComponent,
-    AddNovelComponent
+    AddNovelComponent,
+    AddCharacterComponent
   ],
   entryComponents: [AddNovelComponent],
   imports: [
@@ -44,7 +47,8 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

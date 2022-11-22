@@ -20,8 +20,8 @@
                 <button mat-raised-button color="primary" (click)="openAddEditNovelDialog()">Add</button>
             </th>
             <td mat-cell *matCellDef="let element" class="action-column">   
-                <button mat-icon-button color="primary"  (click)="openAddEditNovelDialog(element)">
-                    <mat-icon>search</mat-icon>
+                <button mat-icon-button color="primary"  (click)="gotoCharacters(element.id)">
+                    <mat-icon>face</mat-icon>
                 </button>              
                 <button mat-icon-button color="primary"  (click)="delete(element.id)">
                     <mat-icon>delete</mat-icon>

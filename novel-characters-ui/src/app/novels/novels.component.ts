@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { AddNovelComponent } from './add-novel.component';
 import { Novel } from './novel.model';
@@ -16,7 +17,8 @@ export class NovelsComponent {
   dataSource: MatTableDataSource<Novel> =  new MatTableDataSource<Novel>();
 
   constructor(private dataService: DataService, 
-              public dialog: MatDialog) {
+              public dialog: MatDialog,
+              private router: Router) {
     this.getData();
   }
   getData() {
@@ -36,5 +38,8 @@ export class NovelsComponent {
     this.dataService.deleteNovel(novelId).subscribe(() => {
       this.getData();
     });
+  }
+  gotoCharacters(novelId: number) {
+    this.router.navigate([`/characters/${novelId}`]);
   }
 }

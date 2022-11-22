@@ -1,0 +1,27 @@
+<div class="add-character-component">
+    <mat-form-field appearance="fill">
+        <mat-label>Novel</mat-label>
+        <mat-select [(value)]="novelId">
+            <mat-option *ngFor="let novel of novels" [value]="novel.id">
+                {{novel.novelName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input [(ngModel)]="name" matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <input [(ngModel)]="gender" matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input [(ngModel)]="age" matInput>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" (click)="addEdit()" [disabled]="!name || !gender">Save</button>
+</div>
